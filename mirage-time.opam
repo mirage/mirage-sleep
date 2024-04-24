@@ -19,9 +19,11 @@ doc: "https://mirage.github.io/mirage-time/"
 bug-reports: "https://github.com/mirage/mirage-time/issues"
 depends: [
   "ocaml" {>= "4.08.0"}
-  "dune" {>= "1.0"}
+  "dune" {>= "2.6"}
   "lwt" {>= "4.0.0"}
+  "duration"
 ]
+depopts: [ "mirage-runtime" ]
 build: [
   ["dune" "subst"] {dev}
   ["dune" "build" "-p" name "-j" jobs]
@@ -29,5 +31,5 @@ build: [
 dev-repo: "git+https://github.com/mirage/mirage-time.git"
 synopsis: "Time operations for MirageOS"
 description: """
-mirage-time defines `Mirage_time.S`, the signature for time-related operations for MirageOS.
+mirage-time defines the single function `sleep_ns`.
 """

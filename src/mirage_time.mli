@@ -23,9 +23,6 @@
 
     {e Release %%VERSION%% } *)
 
-(** Sleep operations. *)
-module type S = sig
-  val sleep_ns: int64 -> unit Lwt.t
-  (** [sleep_ns n] Block the current thread for [n] nanoseconds, treating
-      the [n] unsigned.  *)
-end
+val sleep_ns: int64 -> unit Lwt.t
+(** [sleep_ns n] Block the current thread for [n] nanoseconds, treating the [n]
+    unsigned.  *)

@@ -1,0 +1,6 @@
+(library
+ (name mirage_time_solo5)
+ (public_name mirage-time.solo5)
+ (implements mirage-time)
+ (libraries mirage-runtime lwt)
+ (optional))

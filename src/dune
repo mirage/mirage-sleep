@@ -1,4 +1,6 @@
 (library
  (name mirage_time)
  (public_name mirage-time)
+ (virtual_modules mirage_time)
+ (default_implementation mirage-time.unix)
  (libraries lwt))
