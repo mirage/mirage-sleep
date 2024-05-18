@@ -16,13 +16,20 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *)
 
-(** {1 Time-related devices}
+(** {1 Time device}
 
-    This module define time-related devices for MirageOS and
-    sleep operations.
-
-    {e Release %%VERSION%% } *)
+    This module defines a target-agnostic MirageOS sleep operation.  *)
 
 val sleep_ns: int64 -> unit Lwt.t
-(** [sleep_ns n] Block the current thread for [n] nanoseconds, treating the [n]
+(** [sleep_ns n] blocks the current task for [n] nanoseconds, treating [n] as
     unsigned.  *)
+
+(** {1 Values used by the schedulers} *)
+
+type sleep = { time : int64; mutable canceled : bool; thread : unit Lwt.u }
+(** The type for a sleeping task. *)
+
+val new_sleepers : unit -> sleep list
+(** [new_sleepers ()] is used by the scheduler to find at their convenience
+    the tasks that need to be enqueued into their task set. This also empties
+    the list of sleepers. *)
