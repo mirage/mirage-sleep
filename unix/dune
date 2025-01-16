@@ -1,5 +1,5 @@
 (library
- (name mirage_time_unix)
- (public_name mirage-time.unix)
- (implements mirage-time)
+ (name mirage_sleep_unix)
+ (public_name mirage-sleep.unix)
+ (implements mirage-sleep)
  (libraries lwt.unix duration))

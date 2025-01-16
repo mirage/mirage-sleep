@@ -1,21 +1,16 @@
-## mirage-time -- Time operations for MirageOS
+## mirage-sleep -- Sleep operations for MirageOS
 
-The mirage-time repository defines:
-- [Mirage_time.S][1] the signature for time-related operations for MirageOS;
-- [Time][2] an implementation of the previous signature for the Unix backend.
+The mirage-sleep repository defines [Mirage_sleep][1], the signature for
+sleep-related operations for MirageOS. This is for now only the function
+`ns` to sleep an amount of nanoseconds.
 
-[1]: https://mirage.github.io/mirage-time/mirage-time/Mirage_time
-[2]: https://mirage.github.io/mirage-time/mirage-time-unix/Time
+[1]: https://mirage.github.io/mirage-sleep/mirage-sleep/Mirage_sleep
 
 ### Installation
 
-`mirage-time` can be installed with `opam`:
+`mirage-sleep` can be installed with `opam`:
 
-    opam install mirage-time
-
-`mirage-time-unix` can be installed with `opam`:
-
-    opam install mirage-time-unix
+    opam install mirage-sleep
 
 If you don't use `opam` consult the [`opam`](opam) file for build
 instructions.

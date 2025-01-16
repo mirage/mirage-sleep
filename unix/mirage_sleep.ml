@@ -1,7 +1,5 @@
 (*
- * Copyright (c) 2011-2015 Anil Madhavapeddy <anil@recoil.org>
- * Copyright (c) 2013-2015 Thomas Gazagnaire <thomas@gazagnaire.org>
- * Copyright (c) 2013      Citrix Systems Inc
+ * Copyright (c) 2017 Thomas Gazagnaire <thomas@gazagnaire.org>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -16,20 +14,8 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *)
 
-(** {1 Time device}
-
-    This module defines a target-agnostic MirageOS sleep operation.  *)
-
-val sleep_ns: int64 -> unit Lwt.t
-(** [sleep_ns n] blocks the current task for [n] nanoseconds, treating [n] as
-    unsigned.  *)
-
-(** {1 Values used by the schedulers} *)
+let ns ns = Lwt_unix.sleep (Duration.to_f ns)
 
 type sleep = { time : int64; mutable canceled : bool; thread : unit Lwt.u }
-(** The type for a sleeping task. *)
 
-val new_sleepers : unit -> sleep list
-(** [new_sleepers ()] is used by the scheduler to find at their convenience
-    the tasks that need to be enqueued into their task set. This also empties
-    the list of sleepers. *)
+let new_sleepers () = []

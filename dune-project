@@ -1,2 +1,2 @@
 (lang dune 2.6)
-(name mirage-time)
+(name mirage-sleep)

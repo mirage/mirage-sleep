@@ -4,7 +4,7 @@ type sleep = { time : int64; mutable canceled : bool; thread : unit Lwt.u }
 
 let sleepers = ref []
 
-let sleep_ns d =
+let ns d =
   let res, w = Lwt.task () in
   let time = Int64.add (time ()) d in
   let sleeper = { time; canceled = false; thread = w } in
