@@ -16,6 +16,6 @@
 
 let ns ns = Lwt_unix.sleep (Duration.to_f ns)
 
-type sleep = { time : int64; mutable canceled : bool; thread : unit Lwt.u }
+type t = { time : int64; mutable canceled : bool; thread : unit Lwt.u }
 
 let new_sleepers () = []

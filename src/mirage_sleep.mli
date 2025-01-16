@@ -26,10 +26,10 @@ val ns: int64 -> unit Lwt.t
 
 (** {1 Values used by the schedulers} *)
 
-type sleep = { time : int64; mutable canceled : bool; thread : unit Lwt.u }
+type t = { time : int64; mutable canceled : bool; thread : unit Lwt.u }
 (** The type for a sleeping task. *)
 
-val new_sleepers : unit -> sleep list
+val new_sleepers : unit -> t list
 (** [new_sleepers ()] is used by the scheduler to find at their convenience
     the tasks that need to be enqueued into their task set. This also empties
     the list of sleepers. *)

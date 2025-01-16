@@ -1,6 +1,6 @@
 external time : unit -> int64 = "caml_get_monotonic_time"
 
-type sleep = { time : int64; mutable canceled : bool; thread : unit Lwt.u }
+type t = { time : int64; mutable canceled : bool; thread : unit Lwt.u }
 
 let sleepers = ref []
 
