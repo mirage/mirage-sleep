@@ -1,3 +1,7 @@
+## v4.0.0 (2025-01-30)
+
+* Renamed to mirage-sleep, use dune variants
+
 ## v3.0.0 (2021-11-15)
 
 * Remove Mirage_time_lwt module (#13 @hannesm)
