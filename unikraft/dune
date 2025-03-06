@@ -1,0 +1,8 @@
+(library
+ (name mirage_sleep_unikraft)
+ (public_name mirage-sleep.unikraft)
+ (implements mirage-sleep)
+ (optional))
+
+(rule
+ (copy# %{project_root}/solo5/mirage_sleep.ml mirage_sleep.ml))
