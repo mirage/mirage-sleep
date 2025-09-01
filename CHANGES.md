@@ -1,3 +1,7 @@
+## v4.1.0 (2025-09-01)
+
+* Add support for unikraft (#1 @shym @fabbing @Firobe)
+
 ## v4.0.0 (2025-01-30)
 
 * Renamed to mirage-sleep, use dune variants
